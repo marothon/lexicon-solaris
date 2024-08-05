@@ -13,7 +13,7 @@ async function getPlanets(){
             apiKey = apiKey.key;
         } catch(error){
             console.error(`Unable to fetch API-key: ${error.message}`);
-            throw error;
+            return [];
         }
 
         try {
@@ -26,7 +26,7 @@ async function getPlanets(){
             return planets.bodies;
         } catch(error){
             console.error(`Unable to fetch planet-data: ${error.message}`);
-            throw error;
+            return [];
         }
     } else {
         return JSON.parse(planets);
