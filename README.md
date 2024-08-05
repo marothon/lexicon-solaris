@@ -43,7 +43,7 @@ Here you get to choose your own design, but the theme should be in the same univ
 
 **Base URL**
 ```
-https://fathomless-shelf-54969.herokuapp.com/
+https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/
 ```
 
 **Methods**
