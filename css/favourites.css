@@ -1,0 +1,51 @@
+body {
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.favorites-container {
+    padding: 3rem;
+    width: 70%;
+}
+
+.back-button {
+    justify-self: flex-start;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 0.2rem 0;
+}
+
+p {
+    text-align: center;
+    font-size: 1.7rem;
+    margin: 0.2rem;
+}
+
+.red-heart {
+    color: red;
+}
+
+.favorites-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.favorite-item {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}

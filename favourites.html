@@ -6,10 +6,18 @@
     <title>Solaris - Favouriter</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/favourites.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="js/planet_api.js"></script>
     <script src="js/favourites.js"></script>
 </head>
 <body>
-    
+    <section class="favorites-container">
+        <button class="back-button" onclick="goBack()"><i class="fas fa-arrow-left"></i>BACK</button> 
+        <h1>FAVORITER</h1>
+        <p>VI <i class="fas fa-heart red-heart"></i> PLANETER</p>
+        <section id="favorites-list" class="favorites-list">
+            <!-- Favorite planets will be dynamically inserted here -->
+        </section>
+    </section>
 </body>
 </html>
