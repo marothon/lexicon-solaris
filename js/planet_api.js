@@ -1,7 +1,7 @@
 // Max: Fetch data from the planet api, store it in localStorage and return it.
 // If the data is already in localStorage, return it immediately.
 async function getPlanets(){
-    const baseUrl = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/';
+    const baseUrl = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com';
     let apiKey;
     let planets = localStorage.getItem('planets');
     if(planets === null){
