@@ -35,7 +35,6 @@ body {
     }
 }
 
-
 .favorites-list {
     display: flex;
     flex-direction: column;
@@ -60,17 +59,23 @@ body {
 }
 
 .favorite-item .item-content {
+    display: flex;
+    flex-direction: column;
     text-align: left;
     cursor: pointer;
 }
 
-.favorite-item .item-content h2 {
+.favorite-item .item-content .item-name {
+    text-decoration: none;
+    color: white;
     text-align: left;
     font-size: 1.8rem;
     margin: 0.2rem;
 }
 
-.favorite-item .item-content p {
+.favorite-item .item-content .item-desc {
+    text-decoration: none;
+    color: white;
     text-align: left;
     font-size: 1rem;
     margin: 0.5rem;
