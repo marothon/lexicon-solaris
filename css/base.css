@@ -35,4 +35,5 @@ h3,  .sub-heading{
 p, .description {
     font-family: "Roboto Condensed", sans-serif;
     font-optical-sizing: auto;
+    color: white;
 }

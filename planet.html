@@ -6,10 +6,33 @@
     <title>Solaris - Planet</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/planet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="js/planet_api.js"></script>
     <script src="js/planet.js"></script>
 </head>
 <body>
-    
+    <section id="planet-semicircle">
+        <p></p>
+        <p></p>
+        <p></p>
+    </section>
+
+    <section class="planet-container">
+        <button class="back-button"><i class="fas fa-arrow-left"></i> BACK</button>
+        <h1 id="planet-name"></h1>
+        <p id="favSpan"><i class="fas fa-heart"></i> FAVORITE</p>
+    </section>
+
+    <h3 id="subtitle"> TELL US</h3>
+
+    <article id="planet-description"></article>
+
+    <section class="planet-characteristics">
+        <p id="planet-circumference">OMKRETS</p>
+        <p id="planet-distance">KM FRÅN SOLEN</p>
+        <p id="planet-max-temp">MAX TEMPERATUR</p>
+        <p id="planet-min-temp">MIN TEMPERATUR</p>
+        <p id="planet-moons">MÅNAR</p>
+    </section>
 </body>
 </html>
