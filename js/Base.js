@@ -1,5 +1,5 @@
     //Sara: function to add to/remove from favorites
-    function AddOrRemoveFavorite(id) {
+    function toggleFavorite(id) {
         const index = favorites.findIndex(planet => planet.id === id);
         if (index !== -1) {
             // Remove from favorites
