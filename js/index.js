@@ -42,7 +42,7 @@ async function setupSolarSystem(){
         planetTag.classList.add('planet');
         planetTag.classList.add(planetCssClasses[planet.id]);
         planetTag.id = planet.id;
-        planetTag.setAttribute('name', planet.name);
+        planetTag.setAttribute('title', planet.name);
         planetTag.setAttribute('href', `planet.html?id=${planet.id}`);
         if(planetRatio < 0.1) planetRatio += 0.08;
         if(planetRatio > 0.8) planetRatio -= 0.3;
