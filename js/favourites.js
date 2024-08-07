@@ -67,7 +67,7 @@ function renderFavorites() {
         favSpan.classList = 'heart favorited';
         favSpan.id = 'favSpan';
         favSpan.addEventListener('click', () => {
-            toggleFavorite(planet.name);
+            toggleFavorite(planet.id);
             renderFavorites();
         });
 
