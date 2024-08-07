@@ -1,14 +1,6 @@
 //Sara: Add eventlistener to ensure that the DOM is fully loaded before the script runs.
 document.addEventListener("DOMContentLoaded", () => {
     renderFavorites();
-
-    const backButton = document.querySelector('.back-button');
-    backButton.addEventListener('click', goBack);
-
-    //Sara: function to go back to the homepage
-    function goBack() {
-        window.location.href = 'index.html';
-    }
 });
 
 //Sara: function to retrieve image URLs
