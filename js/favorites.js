@@ -1,9 +1,13 @@
+setup();
+
 //Sara: Add eventlistener to ensure that the DOM is fully loaded before the script runs.
-document.addEventListener("DOMContentLoaded", async () => {
-    const planets = await getPlanets();
-    console.log(planets);
-    renderFavorites(planets);
-});
+function setup(){
+    document.addEventListener("DOMContentLoaded", async () => {
+        const planets = await getPlanets();
+        console.log(planets);
+        renderFavorites(planets);
+    });
+}
 
 //Sara: function to retrieve image URLs
 function getPlanetImage(id) {
