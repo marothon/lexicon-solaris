@@ -34,6 +34,15 @@ main {
     .solar-system {
         width: 90%;
 
+        > .planet-tooltip {
+            position: absolute;
+            border-radius: 1rem;
+            padding: 0.8rem;
+            box-sizing: border-box;
+            background-color: white;
+            color: black;
+        }
+
         > .planet-list-container {
             display: flex;
             align-items: center;
