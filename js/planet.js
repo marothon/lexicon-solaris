@@ -1,37 +1,16 @@
 setup(); 
 
-//Everyone 
+//Everyone (parseInt used to ensure that ID is a number)
 function setup() {
 	document.addEventListener("DOMContentLoaded", function () {
 		const urlParams = new URLSearchParams(window.location.search);
-		const planetIndex = urlParams.get("id");
+		const planetIndex = parseInt(urlParams.get("id"));
 
 		updatePlanetInfo(planetIndex);
 	});
 }
 
-//Nunzia: function to get the properties of the planets by their ID
-async function getPlanetInfoByIndex(index) {
-	let planets = await getPlanets();
-	if (index >= 0 && index < planets.length) {
-		let planet = planets[index];
-		console.log(`ID: ${index}`);
-		console.log(`Type: ${planet.type}`);
-		console.log(`Name: ${planet.name}`);
-		console.log(`Latin name: ${planet.latinName}`);
-		console.log(`Description: ${planet.desc}`);
-		console.log(`Rotation: ${planet.rotation}`);
-		console.log(`Circumference: ${planet.circumference} km`);
-		console.log(
-			`Temp: day - ${planet.temp.day}, Night - ${planet.temp.night} °C`
-		);
-		console.log(`Distance: ${planet.distance} km`);
-		console.log(`Orbital period: ${planet.orbitalPeriod}`);
-		console.log(`Månar: ${planet.moons.join(", ")}`);
-	} else {
-		console.log("Index not valid.");
-	}
-}
+
 
 
 //Nunzia: function to change the info on the page depending on the index of the planet.
@@ -48,9 +27,7 @@ async function updatePlanetInfo(index) {
 		document.getElementById(
 			"planet-circumference"
 		).textContent = `${formatNumberWithSpaces(planet.circumference)} km`;
-		document.getElementById(
-			"planet-distance"
-		).textContent = `${formatNumberWithSpaces(planet.distance)} km`;
+		document.getElementById("planet-distance").textContent = `${formatNumberWithSpaces(planet.distance)} km`;
 		document.getElementById(
 			"planet-max-temp"
 		).textContent = `${planet.temp.day} °C`;
@@ -62,7 +39,8 @@ async function updatePlanetInfo(index) {
 		updateSemicircleColors(index);
 	} else {
 		console.log("Index not valid.");
-	}
+		}
+
 }
 
 //Nunzia: update the semicircle colors based on the planet ID
@@ -92,19 +70,13 @@ function updateSemicircleColors(index) {
 	).style.backgroundColor = `${color}2e`;
 }
 
-//Sara, Max and Nunzia: to get the parameter index be equal to id when searching for a planet
-document.addEventListener("DOMContentLoaded", function () {
-	const urlParams = new URLSearchParams(window.location.search);
-	const planetIndex = urlParams.get("id");
-
-	updatePlanetInfo(planetIndex);
-});
 
 //Nunzia: function to have the numbers have a space every three digits
 function formatNumberWithSpaces(number) {
 	return number.toLocaleString("en-US").replace(/,/g, " ");
 }
 
+// Everyone: function to add and remove the favourite planet 
 function setupFavoriteButton(planetIndex, planets) {
 	const favSpan = document.getElementById("favSpan");
 	let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
