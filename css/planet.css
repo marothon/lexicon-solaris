@@ -4,6 +4,8 @@ body, html {
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
+    background-image: url("../assets/star-transparent.png");
+	background-size: contain;
 }
 
 .planet-semicircle {
