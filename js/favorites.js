@@ -1,6 +1,8 @@
 //Sara: Add eventlistener to ensure that the DOM is fully loaded before the script runs.
-document.addEventListener("DOMContentLoaded", () => {
-    renderFavorites();
+document.addEventListener("DOMContentLoaded", async () => {
+    const planets = await getPlanets();
+    console.log(planets);
+    renderFavorites(planets);
 });
 
 //Sara: function to retrieve image URLs
@@ -20,12 +22,12 @@ function getPlanetImage(id) {
 }
 
 //Sara: function to render favorites list
-function renderFavorites() {
+function renderFavorites(planets) {
     const favoritesList = document.getElementById('favorites-list');
     favoritesList.innerHTML = '';
 
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
+    console.log('local storage favorites: ', favorites)
     favorites.forEach(planet => {
         const itemRow = document.createElement('section');
         itemRow.classList = 'favorite-item';
@@ -62,8 +64,8 @@ function renderFavorites() {
         favSpan.classList = 'heart favorited';
         favSpan.id = 'favSpan';
         favSpan.addEventListener('click', () => {
-            toggleFavorite(planet.id);
-            renderFavorites();
+            toggleFavorite(planet.id, planets);
+            renderFavorites(planets);
         });
 
         const favIcon = document.createElement('i');
