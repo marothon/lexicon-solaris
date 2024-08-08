@@ -96,6 +96,7 @@ h1 {
  text-align: justify;
  font-weight: lighter;
  letter-spacing: 2px;
+ margin-bottom: 1rem;
 }
 
 .planet-characteristics {
@@ -109,7 +110,6 @@ h1 {
   color: white;
   border: none;
   background-color: transparent;
-  font-weight: bold;
   text-decoration: none;
 }
 
