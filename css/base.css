@@ -1,12 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Secular+One&display=swap");
 
 :root {
-	background: linear-gradient(to right, #0c164d, #190b22);
+	background: linear-gradient(to right, #0c164d 30%, #190b22 70%);
 }
 
 body {
-	background-image: url("../assets/star-transparent.png");
-	background-size: contain;
 	height: 100vh;
 	width: 100vw;
 	margin: 0;
@@ -21,7 +19,7 @@ body:after {
 	bottom: -50%;
 	left: -50%;
 	z-index: -1;
-	background: linear-gradient(to right, #0c164d, #190b22);
+	background: linear-gradient(to right, #0c164d 30%, #190b22 70%);
 }
 
 h1 {
@@ -63,4 +61,9 @@ a:visited,
 a:hover,
 a:active {
 	text-decoration: none;
+}
+
+a {
+	font-family: "Secular One", sans-serif;
+	font-weight: 100;	
 }
