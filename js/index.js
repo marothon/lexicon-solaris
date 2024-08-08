@@ -50,6 +50,28 @@ async function setupSolarSystem(){
         planetTag.style.width = `calc(${length} * 15vw)`;
         planetTag.style.height = `calc(${length} * 15vw)`;
 
+        //Handle tooltip on planet hover
+        let tooltipToggleListener = (planet) => {
+            return (event) => {
+                let tooltip = document.querySelector(`.planet-tooltip#${planetCssClasses[planet.id]}`);
+                if(tooltip){
+                    tooltip.remove();
+                }else{
+                    tooltip = document.createElement('p');
+                    tooltip.classList.add('planet-tooltip');
+                    tooltip.id = planetCssClasses[planet.id];
+                    tooltip.textContent = planet.name;
+                    tooltip.style.position = 'absolute';
+                    document.querySelector('main > .solar-system').appendChild(tooltip);
+                    let pos = event.target.getBoundingClientRect();
+                    tooltip.style.left = `${pos.left + pos.width / 2 - tooltip.offsetWidth/2}px`;
+                    tooltip.style.bottom = `${pos.bottom}px`;
+                }
+            }
+        }
+
+        planetTag.addEventListener('mouseover', tooltipToggleListener(planet));
+        planetTag.addEventListener('mouseout', tooltipToggleListener(planet));
 
         planetContainer.insertAdjacentElement('beforeend', planetTag);
     }
