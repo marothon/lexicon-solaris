@@ -25,10 +25,13 @@ body {
         margin: 0.2rem 0;
     }
 
-    p {
+    > p {
         text-align: center;
         font-size: 1.7rem;
         margin: 0.2rem;
+        font-family: "Lora", serif;
+        letter-spacing: 1rem;
+        color: #ffd029;
     }
 
     .red-heart {
