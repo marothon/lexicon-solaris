@@ -123,10 +123,7 @@ h1 {
 
 #favSpan {
   font-size: 30px;
-  align-self: center;
-  color: transparent;
--webkit-text-stroke: white 2px;
-  
+  align-self: center;  
 }
 
 .circumference, .distance {
@@ -141,4 +138,8 @@ h1 {
     font-weight: lighter;
     font-size: 18px;
     letter-spacing: 2px;
+}
+
+.favorited {
+    color: red;
 }

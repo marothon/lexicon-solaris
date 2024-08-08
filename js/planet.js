@@ -1,9 +1,14 @@
-//Nunzia: function used to get an arrey for all the planets.
-async function allPlanets() {
-	let planets = await getPlanets();
-	console.log(planets);
+setup(); 
+
+//Everyone 
+function setup() {
+	document.addEventListener("DOMContentLoaded", function () {
+		const urlParams = new URLSearchParams(window.location.search);
+		const planetIndex = urlParams.get("id");
+
+		updatePlanetInfo(planetIndex);
+	});
 }
-allPlanets();
 
 //Nunzia: function to get the properties of the planets by their ID
 async function getPlanetInfoByIndex(index) {
@@ -27,28 +32,38 @@ async function getPlanetInfoByIndex(index) {
 		console.log("Index not valid.");
 	}
 }
-getPlanetInfoByIndex(2);
+
 
 //Nunzia: function to change the info on the page depending on the index of the planet.
 async function updatePlanetInfo(index) {
 	let planets = await getPlanets();
+	setupFavoriteButton(index, planets);
 	if (index >= 0 && index < planets.length) {
 		let planet = planets[index];
-		document.getElementById("planet-name").textContent = planet.name.toUpperCase();
+		document.getElementById("planet-name").textContent =
+			planet.name.toUpperCase();
 		document.getElementById("planet-description").textContent = planet.desc;
-		document.getElementById("planet-latin-name").textContent = planet.latinName.toUpperCase();
-    document.getElementById("planet-circumference").textContent = `${formatNumberWithSpaces(planet.circumference)} km`;
-		document.getElementById("planet-distance").textContent = `${formatNumberWithSpaces(planet.distance)} km`;
-		document.getElementById("planet-max-temp").textContent = `${planet.temp.day} °C`;
-		document.getElementById("planet-min-temp").textContent = `${planet.temp.night} °C`;
-		document.getElementById("planet-moons").textContent =	planet.moons.length > 0 ? planet.moons.join(", ") : "";
+		document.getElementById("planet-latin-name").textContent =
+			planet.latinName.toUpperCase();
+		document.getElementById(
+			"planet-circumference"
+		).textContent = `${formatNumberWithSpaces(planet.circumference)} km`;
+		document.getElementById(
+			"planet-distance"
+		).textContent = `${formatNumberWithSpaces(planet.distance)} km`;
+		document.getElementById(
+			"planet-max-temp"
+		).textContent = `${planet.temp.day} °C`;
+		document.getElementById(
+			"planet-min-temp"
+		).textContent = `${planet.temp.night} °C`;
+		document.getElementById("planet-moons").textContent =
+			planet.moons.length > 0 ? planet.moons.join(", ") : "";
 		updateSemicircleColors(index);
 	} else {
 		console.log("Index not valid.");
 	}
 }
-
-
 
 //Nunzia: update the semicircle colors based on the planet ID
 function updateSemicircleColors(index) {
@@ -65,12 +80,17 @@ function updateSemicircleColors(index) {
 	};
 
 	const color = colors[index] || "#FFFFFF";
-//Nunzia: to keep the opacity the same for the 3 semicircles when they change color
-	document.getElementById("semicircle-inner").style.backgroundColor = `${color}`;
-	document.getElementById("semicircle-middle").style.backgroundColor = `${color}86`;
-	document.getElementById("semicircle-outer").style.backgroundColor = `${color}2e`;
+	//Nunzia: to keep the opacity the same for the 3 semicircles when they change color
+	document.getElementById(
+		"semicircle-inner"
+	).style.backgroundColor = `${color}`;
+	document.getElementById(
+		"semicircle-middle"
+	).style.backgroundColor = `${color}86`;
+	document.getElementById(
+		"semicircle-outer"
+	).style.backgroundColor = `${color}2e`;
 }
-
 
 //Sara, Max and Nunzia: to get the parameter index be equal to id when searching for a planet
 document.addEventListener("DOMContentLoaded", function () {
@@ -80,8 +100,26 @@ document.addEventListener("DOMContentLoaded", function () {
 	updatePlanetInfo(planetIndex);
 });
 
-//Nunzia: function to have the numbers have a space every three digits 
+//Nunzia: function to have the numbers have a space every three digits
 function formatNumberWithSpaces(number) {
 	return number.toLocaleString("en-US").replace(/,/g, " ");
+}
+
+function setupFavoriteButton(planetIndex, planets) {
+	const favSpan = document.getElementById("favSpan");
+	let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+	if (isFavorited(planetIndex)) {
+		favSpan.classList.add("favorited");
+	}
+
+	function isFavorited(id) {
+		return favorites.some((p) => p.id === id);
+	}
+
+	favSpan.addEventListener("click", () => {
+		toggleFavorite(planetIndex, planets);
+		favSpan.classList.toggle("favorited");
+		
+	});	
 }
 
