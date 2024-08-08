@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+}
+
+.planet-semicircle {
+    overflow: hidden; 
+    min-height: 100vh;
+    min-width: 20vw;
+    margin-left: 0;
+    margin-block: 0;
+    position: relative;
+}
+
+#semicircle-inner {
+    position: absolute;
+    margin-left: -22.5vw;
+    background-color: #FFD029;
+    border-radius: 50%;
+    min-width: 30vw;
+    min-height: 100vh;
+}
+
+#semicircle-middle {
+    position: absolute;
+    margin-left: -19vw;
+    margin-top: -1vh;
+    background-color: #ffd12986;
+    border-radius: 50%;
+    min-width: 30vw;
+    min-height: 105vh;
+}
+
+#semicircle-outer {
+    position: absolute;
+    margin-left: -15.5vw;
+    margin-top: -3vh;
+    background-color: #ffd1292e;
+    border-radius: 50%;
+    min-width: 30vw;
+    min-height: 110vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2vw;
+    max-width: 50vw;
+    padding-left: 8vw;
+}
+
+h1 {
+  font-family: "Secular One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 60px;
+  margin: 0;
+}
+
+
+.planet-container {
+    display: flex;
+    min-width: 50vw;
+    justify-content: space-between;
+}
+
+#planet-name {
+    letter-spacing: 5px;
+}
+
+#planet-latin-name {
+    margin-top: 0;
+    font-size: 30px;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #FFD029;
+    letter-spacing: 15px;
+}
+
+#planet-description {
+ font-family: "Roboto Condensed", sans-serif;
+ font-optical-sizing: auto;
+ font-style: normal;
+ color: white;
+ font-size: 16px;
+ text-align: justify;
+ font-weight: lighter;
+ letter-spacing: 2px;
+}
+
+.planet-characteristics {
+  display: grid;
+  min-width: 50vw;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+}
+
+.back-button {
+  color: white;
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18;
+  letter-spacing: 2px;
+}
+
+#favSpan {
+  font-size: 30px;
+  align-self: center;  
+}
+
+.circumference, .distance {
+    border-top: solid 1px #ffffff36;
+}
+
+.max-temperature, .min-temperature {
+    border-bottom: solid 1px #ffffff36;
+}
+
+.info {
+    font-weight: lighter;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.favorited {
+    color: red;
+}
