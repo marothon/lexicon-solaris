@@ -10,9 +10,6 @@ function setup() {
 	});
 }
 
-
-
-
 //Nunzia: function to change the info on the page depending on the index of the planet.
 async function updatePlanetInfo(index) {
 	let planets = await getPlanets();
@@ -24,24 +21,21 @@ async function updatePlanetInfo(index) {
 		document.getElementById("planet-description").textContent = planet.desc;
 		document.getElementById("planet-latin-name").textContent =
 			planet.latinName.toUpperCase();
-		document.getElementById(
-			"planet-circumference"
-		).textContent = `${formatNumberWithSpaces(planet.circumference)} km`;
+		document.getElementById("planet-circumference").textContent = `${formatNumberWithSpaces(planet.circumference)} km`;
 		document.getElementById("planet-distance").textContent = `${formatNumberWithSpaces(planet.distance)} km`;
-		document.getElementById(
-			"planet-max-temp"
-		).textContent = `${planet.temp.day} °C`;
-		document.getElementById(
-			"planet-min-temp"
-		).textContent = `${planet.temp.night} °C`;
-		document.getElementById("planet-moons").textContent =
-			planet.moons.length > 0 ? planet.moons.join(", ") : "";
+		document.getElementById("planet-max-temp").textContent = `${planet.temp.day} °C`;
+		document.getElementById("planet-min-temp").textContent = `${planet.temp.night} °C`;
+		document.getElementById("planet-moons").textContent =	planet.moons.length > 0 ? planet.moons.join(", ") : "";
 		updateSemicircleColors(index);
 	} else {
 		console.log("Index not valid.");
-		}
-
-}
+		 const mainContent = document.querySelector("body");
+        if (mainContent) {mainContent.innerHTML = `
+							<a href="index.html" class="back-button" style="font-size: 25px; margin-block: auto; margin-left: 10vw;"><i class="fas fa-arrow-left"></i> BACKA </a>
+                <p style="text-align: center; margin-block: auto; margin-left: 15vw; font-size: 1.5em; color: white;">
+                    Kunde inte hitta planeten. Tryck på backa för att gå till hemsidan.
+                </p>`;
+		}}};
 
 //Nunzia: update the semicircle colors based on the planet ID
 function updateSemicircleColors(index) {
