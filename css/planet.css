@@ -68,9 +68,7 @@ h1 {
   margin: 0;
 }
 
-main {
-    max-width: 50vw;
-}
+
 .planet-container {
     display: flex;
     min-width: 50vw;
@@ -96,7 +94,7 @@ main {
  font-optical-sizing: auto;
  font-style: normal;
  color: white;
- font-size: 18px;
+ font-size: 16px;
  text-align: justify;
  font-weight: lighter;
  letter-spacing: 2px;
@@ -113,8 +111,8 @@ main {
   color: white;
   border: none;
   background-color: transparent;
-  padding-bottom: 5vh;
   font-weight: bold;
+  text-decoration: none;
 }
 
 .title {
