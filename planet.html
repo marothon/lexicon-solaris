@@ -1,38 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solaris - Planet</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/planet.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="js/planet_api.js"></script>
-    <script src="js/planet.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solaris - Planet</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/planet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="js/planet_api.js"></script>
+  <script src="js/planet.js"></script>
 </head>
+
 <body>
-    <section id="planet-semicircle">
-        <p></p>
-        <p></p>
-        <p></p>
-    </section>
+  <section class="planet-semicircle">
+    <p id="semicircle-outer"></p>
+    <p id="semicircle-middle"></p>
+    <p id="semicircle-inner"></p>
+  </section>
 
-    <section class="planet-container">
-        <button class="back-button"><i class="fas fa-arrow-left"></i> BACK</button>
+  <main>
+    
+    <button class="back-button"><i class="fas fa-arrow-left"></i> BACKA </button>
+
+      <div class="planet-container">
         <h1 id="planet-name"></h1>
-        <p id="favSpan"><i class="fas fa-heart"></i> FAVORITE</p>
-    </section>
+        <p id="favSpan"><i class="fas fa-heart"></i></p>
+      </div>
 
-    <h3 id="subtitle"> TELL US</h3>
+    <p id="planet-latin-name"></p>
 
     <article id="planet-description"></article>
 
-    <section class="planet-characteristics">
-        <p id="planet-circumference">OMKRETS</p>
-        <p id="planet-distance">KM FRÅN SOLEN</p>
-        <p id="planet-max-temp">MAX TEMPERATUR</p>
-        <p id="planet-min-temp">MIN TEMPERATUR</p>
-        <p id="planet-moons">MÅNAR</p>
-    </section>
+    <hr>
+
+          <section class="planet-characteristics">
+            <div class="circumference">
+              <p class="title">OMKRETS</p>
+              <p class="info" id="planet-circumference"></p>
+            </div>
+            <div class="distance">
+              <p class="title">KM FRÅN SOLEN</p>
+              <p class="info" id="planet-distance"></p>
+            </div>
+            <div class="max-temperature">
+              <p class="title">MAX TEMPERATUR</p>
+              <p class="info" id="planet-max-temp"></p>
+            </div>
+              <div class="min-temperature">
+              <p class="title">MIN TEMPERATUR</p>
+            <p class="info" id="planet-min-temp"></p>
+            </div>
+ 
+            <div class="moons">
+             <p class="title">MÅNAR</p>
+             <p class="info"  id="planet-moons"></p>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
